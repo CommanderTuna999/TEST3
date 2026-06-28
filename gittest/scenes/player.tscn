@@ -18,13 +18,17 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 520.00006
+height = 1420.0004
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
-radius = 194.0
-height = 1100.0
+radius = 209.99998
+height = 1059.9999
 
 [node name="player" type="CharacterBody2D" unique_id=2049419943]
 modulate = Color(10.446363, 0.4666668, 15.078727, 1)
-position = Vector2(1.5258789e-05, -1)
+position = Vector2(-2.9999998, -5.684342e-14)
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_g2els")
 metadata/_edit_group_ = true
@@ -34,7 +38,19 @@ position = Vector2(23, -19)
 sprite_frames = SubResource("SpriteFrames_sh265")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=435479015]
-shape = SubResource("CapsuleShape2D_qhqgy")
+position = Vector2(30.000038, -20)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("CapsuleShape2D_g2els")
+debug_color = Color(0, 0.6, 0.7019608, 0.41960785)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1964454338]
 position_smoothing_enabled = true
+
+[node name="hurt_area" type="Area2D" parent="." unique_id=645847249]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_area" unique_id=571055932]
+shape = SubResource("CapsuleShape2D_qhqgy")
+
+[connection signal="area_entered" from="hurt_area" to="." method="_on_hurt_area_area_entered"]
