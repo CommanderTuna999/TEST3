@@ -10,9 +10,9 @@ var chase_subject = null
 
 
 func _process(delta):
-	if chase_subject.position.x > position.x:
+	if not chase_subject == null and chase_subject.position.x > position.x:
 		animated_sprite_2d.flip_h = false
-	elif chase_subject.position.x < position.x:
+	elif not chase_subject == null and chase_subject.position.x < position.x:
 		animated_sprite_2d.flip_h = true
 		
 		
