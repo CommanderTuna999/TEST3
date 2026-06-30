@@ -16,5 +16,16 @@ func _process(delta):
 
 
 
-func _on_hurt_area_area_entered(body):
-	get_tree().reload_current_scene()
+
+
+
+
+
+
+
+
+
+
+
+func _on_hurt_area_body_entered(body: Node2D) -> void:
+	get_tree().reload_current_scene() #lowkey gotta replace this with damage script but not rn

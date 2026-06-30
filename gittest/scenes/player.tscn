@@ -19,12 +19,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
-radius = 520.00006
-height = 1420.0004
+radius = 230.00002
+height = 1240.0004
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
-radius = 209.99998
-height = 1059.9999
+radius = 139.99998
+height = 1019.9999
 
 [node name="player" type="CharacterBody2D" unique_id=2049419943]
 modulate = Color(10.446363, 0.4666668, 15.078727, 1)
@@ -55,4 +55,4 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_area" unique_id=571055932]
 shape = SubResource("CapsuleShape2D_qhqgy")
 
-[connection signal="area_entered" from="hurt_area" to="." method="_on_hurt_area_area_entered"]
+[connection signal="body_entered" from="hurt_area" to="." method="_on_hurt_area_body_entered"]
