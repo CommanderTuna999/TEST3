@@ -2,18 +2,18 @@ extends CharacterBody2D
 var speed = 300
 var aggro = false
 var chase_subject = null
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 
 
 
 
 
 func _process(delta):
-	var direction = global_position.direction_to(chase_subject.global_position)
-	print(direction)
-	#if direction < 0:
-		#Sprite2D.flip_h = true
-	#elif direction > 0:
-		#Sprite2D.flip_h = false
+	if chase_subject.position.x > position.x:
+		animated_sprite_2d.flip_h = false
+	elif chase_subject.position.x < position.x:
+		animated_sprite_2d.flip_h = true
 		
 		
 		
