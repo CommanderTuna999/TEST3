@@ -1,7 +1,7 @@
 extends CanvasLayer
 
-@onready var sprint_bar = $HBoxContainer/VBoxContainer/SprintBar
-@onready var sprint_label = $HBoxContainer/VBoxContainer/SprintLabelVBoxContainer/SprintLabel
+@onready var sprint_bar = $VBoxContainer/SprintBar
+@onready var sprint_label = $VBoxContainer/SprintLabel
 
 func _ready():
 	# Style the bar
